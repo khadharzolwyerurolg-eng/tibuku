@@ -1,0 +1,324 @@
+.main-content-layout {
+    width: 100%;
+    background-color: #f1eeea;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.card-elenco {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem;
+
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.card-description {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.story-main-title {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #111111;
+}
+
+.elenco-view-box-category {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.btn-read-action {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid #1e1e24;
+    border-radius: 6px;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-read-action:hover {
+    background-color: #1e1e24;
+    color: #ffffff;
+}
+
+.btn-read-action a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- BARRA DO TOPO DO LEITOR --- */
+.reader-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 2px solid rgba(30, 30, 36, 0.1);
+    padding-bottom: 0.75rem;
+}
+
+.reader-titles h1 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.8rem;
+    color: #1e1e24;
+}
+
+.reader-titles h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: #555555;
+    font-weight: 400;
+}
+
+.baxk-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f1eeea;
+    font-weight: 700;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.baxk-btn:hover {
+    background-color: #333340;
+    color: #f1eeea;
+}
+
+.content-to-read {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #111111;
+}
+
+.elenco-text-content {
+    font-family: system-ui ;
+    font-size: 1.5rem;
+    text-align: justify;
+    line-height: 1.8;
+    color: #111111;
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+.elenco-text-content p {
+    margin: 0 0 1rem;
+}
+
+.elenco-text-content ul,
+.elenco-text-content ol {
+    margin: 0 0 1rem;
+    padding-left: 2rem;
+}
+
+.elenco-text-content li {
+    padding-left: 0.25rem;
+}
+
+.elenco-text-content li[data-list="bullet"] {
+    position: relative;
+    list-style: none;
+}
+
+.elenco-text-content li[data-list="bullet"]::before {
+    content: "•";
+    position: absolute;
+    left: -1.25rem;
+}
+
+.elenco-text-content .ql-align-center {
+    text-align: center;
+}
+
+.elenco-text-content .ql-align-right {
+    text-align: right;
+}
+
+.elenco-text-content .ql-align-justify {
+    text-align: justify;
+}
+
+.elenco-text-content blockquote {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid rgba(30, 30, 36, 0.2);
+}
+
+.elenco-text-content a {
+    color: #007a87;
+    text-decoration: underline;
+}
+
+.author{
+  opacity: 0.3;
+  margin-top: 2rem;
+  align-items: end;
+  text-align: end;
+}
+
+/* --- NAVEGAÇÃO DO RODAPÉ --- */
+.reader-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    width: 100%;
+    max-width: 900px;
+    margin: 1rem auto 0;
+}
+
+
+.baxk-btn:hover:not(:disabled) {
+    background-color: #333340;
+}
+
+.baxk-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Rodapé do Autor */
+.author-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1.5rem;
+}
+
+.author {
+    font-size: 1rem;
+    font-style: italic;
+    color: #111111;
+    opacity: 0.5;
+    margin: 0;
+}
+
+/* Navegação Inferior */
+.reader-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1300px;
+    margin: 1rem auto 0;
+}
+
+
+/* ==========================================================================
+   2. RESPONSIVIDADE TABLETS (Telas médias de 768px até 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .card-elenco {
+        padding: 2rem 1.25rem;
+    }
+
+    .reader-titles h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-to-read {
+        padding: 2rem;
+        max-height: 60vh;
+    }
+
+    .elenco-text-content {
+        font-size: 1.2rem;
+        line-height: 1.75;
+    }
+}
+
+
+/* ==========================================================================
+   3. RESPONSIVIDADE SMARTPHONES (Telas de até 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+    .main-content-layout {
+        margin: 1rem 0;
+    }
+
+    .card-elenco {
+        padding: 1rem 0.75rem;
+        gap: 1.25rem;
+    }
+
+    /* Quebra o topo para não esmagar o botão de Voltar */
+    .reader-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .reader-titles h1 {
+        font-size: 1.5rem; /* Fonte otimizada para ecrãs pequenos */
+        line-height: 1.3;
+    }
+
+    .reader-titles h3 {
+        font-size: 0.9rem;
+    }
+
+    .baxk-btn {
+        width: 100%; /* Botões viram blocos de largura total para facilitar o clique */
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste da Caixa de Leitura no Mobile */
+    .content-to-read {
+        padding: 1.25rem;
+        max-height: 65vh; /* Otimiza o espaço vertical do smartphone */
+    }
+
+    .elenco-text-content {
+        font-size: 1.1rem; /* Fonte ideal para telas de celular */
+        line-height: 1.7;
+        text-align: left; /* Alinhamento à esquerda lê melhor no telemóvel do que justificado */
+    }
+
+    .author-description {
+        margin-top: 2rem;
+    }
+
+    /* Alinha os botões Anterior e Próximo lado a lado na base */
+    .reader-navigation {
+        gap: 0.75rem;
+        margin-top: 0.5rem;
+    }
+    
+    .reader-navigation .baxk-btn {
+        flex: 1; /* Divide o espaço da base igualmente entre os dois botões */
+    }
+}

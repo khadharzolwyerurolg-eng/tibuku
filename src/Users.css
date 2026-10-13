@@ -1,0 +1,131 @@
+
+
+/* Container do Menu de Conta */
+.account-menu {
+  position: relative; /* CRUCIAL: Base para o dropdown flutuar em relação a este botão */
+  display: inline-block;
+
+  .icon-btn {
+    background-color: #f1eeea;
+    color: #1e1e24;
+    border: 1px solid rgba(30, 30, 36, 0.15);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover, &[aria-expanded="true"] {
+      background-color: #1e1e24;
+      color: #ffffff;
+      border-color: #1e1e24;
+    }
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* CAIXA FLUTUANTE (Dropdown) */
+.account-dropdown {
+  position: absolute;
+  top: calc(100% + 10px); /* Posiciona logo abaixo do botão com margem de segurança */
+  right: 0; /* Alinha perfeitamente à direita do botão */
+  width: 220px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  z-index: 1000;
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .account-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.7rem 1rem;
+    color: #333333;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+
+    &:hover {
+      background-color: #f1eeea;
+      color: #1e1e24;
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  .account-dropdown-divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.06);
+    margin: 0.5rem 0;
+  }
+
+  .account-dropdown-logout {
+    color: #8a0505; /* Tom vermelho da identidade visual */
+
+    &:hover {
+      background-color: rgba(138, 5, 5, 0.05);
+      color: #a30707;
+    }
+  }
+}
+
+/* --- ADAPTAÇÃO PARA RESPONSIVIDADE MOBILE --- */
+@media (max-width: 600px) {
+  .account-dropdown {
+    position: fixed; /* Fixa o painel na tela em dispositivos móveis */
+    top: auto;
+    bottom: 0; /* Cola o menu na parte inferior da tela estilo "Bottom Sheet" */
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 16px 16px 0 0; /* Cantos arredondados apenas no topo */
+    padding: 1rem 1rem 2rem 1rem;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(100%); /* Esconde empurrando para baixo da tela */
+
+    &.is-open {
+      transform: translateY(0);
+    }
+    
+    .account-dropdown-item {
+      padding: 0.9rem 1.25rem; /* Área de toque ampliada no mobile */
+      font-size: 1.05rem;
+    }
+  }
+  
+  body.nav-lock {
+    overflow: hidden;
+  }
+}

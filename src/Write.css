@@ -1,0 +1,201 @@
+.write-elenco-page {
+  width: 100%;
+  background-color: #f1eeea; 
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.write-elenco-container {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+
+
+  .content-area {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .title-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 1.2rem;
+      font-family: Georgia, serif;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 6px;
+      outline: none;
+      background-color: #ffffff;
+      box-sizing: border-box;
+
+      &:focus {
+        border-color: var(--text-muted);
+        box-shadow: 0 0 0 3px rgba(0, 122, 135, 0.05);
+      }
+    }
+
+    .editor-container {
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 6px;
+      height: 450px; 
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      .ql-toolbar {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        background-color: #faf9f6;
+      }
+
+      .ql-container {
+        border: none;
+        flex: 1;
+        overflow-y: auto;
+        font-family: system-ui, sans-serif;
+        font-size: 1.05rem;
+      }
+    }
+  }
+
+  .menu-area {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .menu-item {
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 1.5rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      h2 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #1e1e24;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding-bottom: 0.5rem;
+      }
+
+      .status-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: #555555;
+      }
+
+      .file-upload-wrapper {
+        .file-label {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--text-muted);
+          text-decoration: underline;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: color 0.2s;
+
+          &:hover {
+            color: var(--text-muted);
+          }
+        }
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-top: 0.5rem;
+
+        button {
+          flex: 1;
+          padding: 0.6rem 1rem;
+          font-size: 0.85rem;
+          font-weight: 600;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+
+        .btn-draft {
+          color: var(--text-muted);
+          background-color: transparent;
+          border: 1px solid var(--text-muted);
+
+          &:hover {
+            background-color: rgba(0, 122, 135, 0.05);
+          }
+        }
+
+        .btn-publish {
+          color: #ffffff;
+          background-color: var(--text-muted);
+          border: 1px solid var(--text-muted);
+
+          &:hover {
+            background-color: var(--text-muted);
+            border-color: #ffffff;
+          }
+        }
+      }
+
+      .categories-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        .cat-option {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          input[type="radio"] {
+            accent-color: var(--text-muted); 
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+          }
+
+          label {
+            font-size: 0.95rem;
+            color: #444444;
+            cursor: pointer;
+            user-select: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   Responsividade: Quebra para Mobile e Tablet Vertical
+   ========================================================================== */
+@media (max-width: 900px) {
+  .write-elenco-container {
+    flex-direction: column; 
+    gap: 1.5rem;
+    padding: 0 1rem;
+
+    .content-area, .menu-area {
+      width: 100%;
+      flex: none; 
+    }
+    
+    .content-area .editor-container {
+      height: 350px; 
+    }
+  }
+}

@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/server/uploads/covers/*
+!/server/uploads/covers/.gitkeep
 
 # production
 /build

@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// 1. IMPORTAÇÃO DO PROVIDER: Altere o caminho abaixo para a pasta exata onde guardou o seu authContext
+import { AuthContextProvider } from './components/context/authContext'; 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* 2. ENVOLVA O COMPONENTE APP COM O PROVEDOR DE AUTENTICAÇÃO */}
+    <AuthContextProvider>
+      <App />
+    </AuthContextProvider>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
