@@ -24,7 +24,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads"), {
 
 
 app.use(cors({
-    origin: ["https://tibuku.onrender.com/", "https://tibuku.onrender.com/"],
+    origin: ["https://tibuku.onrender.com/"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
